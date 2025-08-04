@@ -253,15 +253,15 @@ function terminal.send_data_to_terminal(buffer_idx, cmd, opts)
       if terminal.toggleterm_instance.job_id and terminal.toggleterm_instance.job_id > 0 then
         -- Format command for different OS
         local formatted_cmd = cmd
-        if osys.iswin32 then
-          formatted_cmd = cmd .. " \r"
-        elseif osys.ismac then
-          formatted_cmd = cmd .. " \n"
-        elseif osys.islinux then
-          formatted_cmd = cmd .. " \n"
-        elseif osys.iswsl then
-          formatted_cmd = cmd .. " \n"
-        end
+        -- if osys.iswin32 then
+        --   formatted_cmd = cmd .. " \r"
+        -- elseif osys.ismac then
+        --   formatted_cmd = cmd .. " \n"
+        -- elseif osys.islinux then
+        --   formatted_cmd = cmd .. " \n"
+        -- elseif osys.iswsl then
+        --   formatted_cmd = cmd .. " \n"
+        -- end
 
         -- Send command to toggleterm
         local success, err = pcall(function()
